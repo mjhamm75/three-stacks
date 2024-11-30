@@ -4,6 +4,7 @@ export const services = [
   "redPanda",
   "kafka",
   "redis",
+  "redisDapr",
   "mongo",
   "managerCore",
   "managerCoreDapr",
@@ -49,6 +50,10 @@ const initialState: State = {
     isRunning: false,
   },
   redis: {
+    port: 6380,
+    isRunning: false,
+  },
+  redisDapr: {
     port: 6379,
     isRunning: false,
   },

@@ -14,7 +14,7 @@ export function Entry() {
   return (
     <div>
       <div>
-        <h2>Dependencies</h2>
+        <h2>Backbone</h2>
         <Container>
           <Widget
             serviceName={"kafka"}
@@ -59,7 +59,12 @@ export function Entry() {
             serviceName={"redis"}
             isRunning={state.redis.isRunning}
             port={state.redis.port}
-            dependencies={[]}
+            dependencies={[
+              {
+                serviceName: "redisDapr",
+                isRunning: state.redisDapr.isRunning,
+              },
+            ]}
             onPoll={({ isRunning }) =>
               dispatch({
                 type: "updateIsRunning",
